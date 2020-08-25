@@ -1,6 +1,27 @@
-import { seats, count, total, movieSelect } from "./variables";
+import {
+  seats,
+  intro,
+  count,
+  titlePre,
+  title,
+  total,
+  movieSelect,
+  movieList,
+} from "./variables";
+
+const setMovieList = (element) => {
+  movieList.forEach(function (movie) {
+    let opt = document.createElement("option");
+    opt.appendChild(
+      document.createTextNode(`${movie.title} ($${movie.price})`)
+    );
+    opt.value = movie.price;
+    element.appendChild(opt);
+  });
+};
 
 const populateUI = () => {
+  setMovieList(movieSelect);
   const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
 
   if (selectedSeats !== null && selectedSeats.length > 0) {
@@ -34,9 +55,18 @@ const updateSelectedCount = () => {
   let ticketPrice = +movieSelect.value;
 
   const selectedMoviePrice = localStorage.getItem("selectedMoviePrice");
+  const selectedMovieIndex = localStorage.getItem("selectedMovieIndex");
 
   if (selectedMoviePrice !== null) {
     ticketPrice = selectedMoviePrice;
+    titlePre.innerText = " for ";
+    title.innerText = movieList[selectedMovieIndex].title;
+  }
+
+  if (selectedSeatsCount > 0) {
+    intro.style.visibility = "visible";
+  } else {
+    intro.style.visibility = "hidden";
   }
 
   total.innerText = selectedSeatsCount * ticketPrice;

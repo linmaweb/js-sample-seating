@@ -21,24 +21,17 @@
       <div class="container">
         <div class="movie-container">
           <label>Pick a movie:</label>
-          <select id="movie">
-            <option value="15">Captain Marvel ($15)</option>
-            <option value="10">Avengers: Endgame ($10)</option>
-            <option value="12">Spider-Man: Far From Home ($12)</option>
-            <option value="8">Black Widow ($8)</option>
-            <option value="13">The Eternals ($13)</option>
-            <option value="8">Thor: Love and Thunder ($8)</option>
-            <option value="5">Black Panther II ($5)</option>
-          </select>
+          <select id="movie"></select>
         </div>
       </div>
     </div>
 
     <div class="bottom">
       <div class="container">
-        <p class="text">
-          You have selected <span id="count">0</span> seats for a price of
-          $<span id="total">0</span>
+        <p class="text" id="intro">
+          You have selected <span id="count">0</span> seats <br />
+          <span id="title-pre"></span><span id="title"></span> <br />
+          for a price of $<span id="total">0</span>
         </p>
 
         <ul class="showcase">

@@ -154,11 +154,17 @@ button {
 }
 
 p.text {
-  margin: 5px 0;
-  font-size: 20px;
+  margin: 5px 0 50px;
+  font-size: 18px;
+  line-height: 32px;
 }
 
 p.text span {
   color: #d6b29c;
   font-weight: bold;
+}
+
+p.text span#title-pre {
+  font-weight: 300;
+  color: white;
 }
