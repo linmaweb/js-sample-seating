@@ -6,6 +6,7 @@ const titlePre = document.getElementById("title-pre");
 const title = document.getElementById("title");
 const total = document.getElementById("total");
 const movieSelect = document.getElementById("movie");
+
 const movieList = [
   { title: "Captain Marvel", price: 15 },
   { title: "Avengers: Endgame", price: 18 },
